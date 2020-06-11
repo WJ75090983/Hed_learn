@@ -107,7 +107,7 @@ if __name__ == "__main__":
       image_path_tensor_for_verify = fix_size_image_pipeline(dataset_root_dir_string, input_queue_for_verify, args.batch_size)
     '''
 
-    is_training_placeholder = tf.placeholder(tf.bool, name='is training')
+    is_training_placeholder = tf.placeholder(tf.bool, name='is_training')
     feed_dict_to_use = {is_training_placeholder: True}
 
     print('image_tensor shape is: {}'.format(image_tensor.get_shape()))
