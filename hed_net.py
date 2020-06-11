@@ -5,7 +5,7 @@ from __future__ import print_function
 import sys
 import os
 import numpy as np
-import tf
+import tensorflow as tf
 from const import const_image_height
 from const import const_image_width
 from const import const_use_batch_norm
