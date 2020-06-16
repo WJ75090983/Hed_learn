@@ -124,35 +124,35 @@ def vgg_style_hed(inputs, batch_size, is_training):
         net = inputs
 
         with tf.variable_scope('conv1'):
-            net = _vgg_conv2d(net, 12, [3, 3])
-            net = _vgg_conv2d(net, 12, [3, 3])
+            net = _vgg_conv2d(net, 6, [3, 3])
+            net = _vgg_conv2d(net, 6, [3, 3])
             dsn1 = net
             net = _max_pool2d(net)
 
         with tf.variable_scope('conv2'):
-            net = _vgg_conv2d(net, 24, [3, 3])
-            net = _vgg_conv2d(net, 24, [3, 3])
+            net = _vgg_conv2d(net, 12, [3, 3])
+            net = _vgg_conv2d(net, 12, [3, 3])
             dsn2 = net
             net = _max_pool2d(net)
 
         with tf.variable_scope('conv3'):
-            net = _vgg_conv2d(net, 48, [3, 3])
-            net = _vgg_conv2d(net, 48, [3, 3])
-            net = _vgg_conv2d(net, 48, [3, 3])
+            net = _vgg_conv2d(net, 24, [3, 3])
+            net = _vgg_conv2d(net, 24, [3, 3])
+            net = _vgg_conv2d(net, 24, [3, 3])
             dsn3 = net
             net = _max_pool2d(net)
 
         with tf.variable_scope('conv4'):
-            net = _vgg_conv2d(net, 96, [3, 3])
-            net = _vgg_conv2d(net, 96, [3, 3])
-            net = _vgg_conv2d(net, 96, [3, 3])
+            net = _vgg_conv2d(net, 48, [3, 3])
+            net = _vgg_conv2d(net, 48, [3, 3])
+            net = _vgg_conv2d(net, 48, [3, 3])
             dsn4 = net
             net = _max_pool2d(net)
 
         with tf.variable_scope('conv5'):
-            net = _vgg_conv2d(net, 192, [3, 3])
-            net = _vgg_conv2d(net, 192, [3, 3])
-            net = _vgg_conv2d(net, 192, [3, 3])
+            net = _vgg_conv2d(net, 96, [3, 3])
+            net = _vgg_conv2d(net, 96, [3, 3])
+            net = _vgg_conv2d(net, 96, [3, 3])
             dsn5 = net
             # no need this pool layer
 
