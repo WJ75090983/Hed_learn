@@ -165,25 +165,25 @@ def vgg_style_hed(inputs, batch_size, is_training):
         with tf.variable_scope('dsn2'):
             dsn2 = _dsn_1x1_conv2d(dsn2, 1)
             print('!!debug, dsn2 shape is: {}'.format(dsn2.get_shape()))
-            dsn2 = _dsn_deconv2d_with_upsample_factor(dsn2, 1, upsample_factor=2)
+            dsn2 = _dsn_deconv2d_with_upsample_factor(dsn2, 1, upsample_factor=1)
             print('!!debug, dsn2 shape is: {}'.format(dsn2.get_shape()))
 
         with tf.variable_scope('dsn3'):
             dsn3 = _dsn_1x1_conv2d(dsn3, 1)
             print('!!debug, dsn3 shape is: {}'.format(dsn3.get_shape()))
-            dsn3 = _dsn_deconv2d_with_upsample_factor(dsn3, 1, upsample_factor=4)
+            dsn3 = _dsn_deconv2d_with_upsample_factor(dsn3, 1, upsample_factor=2)
             print('!!debug, dsn3 shape is: {}'.format(dsn3.get_shape()))
 
         with tf.variable_scope('dsn4'):
             dsn4 = _dsn_1x1_conv2d(dsn4, 1)
             print('!!debug, dsn4 shape is: {}'.format(dsn4.get_shape()))
-            dsn4 = _dsn_deconv2d_with_upsample_factor(dsn4, 1, upsample_factor=8)
+            dsn4 = _dsn_deconv2d_with_upsample_factor(dsn4, 1, upsample_factor=4)
             print('!!debug, dsn4 shape is: {}'.format(dsn4.get_shape()))
 
         with tf.variable_scope('dsn5'):
             dsn5 = _dsn_1x1_conv2d(dsn5, 1)
             print('!!debug, dsn5 shape is: {}'.format(dsn5.get_shape()))
-            dsn5 = _dsn_deconv2d_with_upsample_factor(dsn5, 1, upsample_factor=16)
+            dsn5 = _dsn_deconv2d_with_upsample_factor(dsn5, 1, upsample_factor=8)
             print('!!debug, dsn5 shape is: {}'.format(dsn5.get_shape()))
 
         ##dsn fuse
