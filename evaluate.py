@@ -75,7 +75,7 @@ if __name__ == "__main__":
     else:
       print('no checkpoint file to restore, exit()')
       exit()
-
+    t1 = cv2.getTickCount()
     _dsn_fuse, \
     _dsn1, \
     _dsn2, \
@@ -86,7 +86,9 @@ if __name__ == "__main__":
               dsn3, dsn4,
               dsn5],
               feed_dict=feed_dict_to_use)
-
+    t2 = cv2.getTickCount()
+    process_time = (t2 - t1) / cv2.getTickFrequency()
+    print(process_time)
     '''
     HED 网络输出的Tensor中的像素值，并不是像label image那样落在(0.0, 1.0)这个区间范围内的，
     用threshold处理一下，就可以转换成image的矩阵，让像素值落在正常取值区间内
